@@ -8,6 +8,9 @@
 # I looked at 3 scenarios for expected rates
 # below is one scenario only
 
+# for ref here is 3 arm power, using 2 arm and multipling up , so no multiple adjustments 
+sum(ceiling(Hmisc::bsamsize(p1=.15, p2=.2, fraction=.5, alpha=.05, power=.8)))*3/2
+
 library(rpact)
 packageVersion("rpact")
 
@@ -25,6 +28,9 @@ d <- getDesignGroupSequential(typeOfDesign = "asHSD",
 )
 
 summary(getSampleSizeRates(d, pi1 = c(0.15), pi2 = 0.2))
+
+
+
 
 
 # I took 1472.4/2*3, dividing by 2 for 1 arm , multiplying by 3 for arms = 2209 Total N at interim
